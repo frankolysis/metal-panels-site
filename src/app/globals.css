@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #2C3E50;
+  --color-brand-light: #3498DB;
+  --color-brand-dark: #1A252F;
+  --color-brand-accent: #E67E22;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Montserrat", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #262626;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}

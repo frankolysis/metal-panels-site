@@ -1,0 +1,305 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// ADMIN AUTHENTICATION
+// ============================================
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  role         AdminRole @default(EDITOR)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  EDITOR
+}
+
+// ============================================
+// PRODUCTS
+// ============================================
+
+model ProductCategory {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?   @db.Text
+  image       String?
+  sortOrder   Int       @default(0)
+  isActive    Boolean   @default(true)
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  inspirationProjects InspirationProject[] @relation("ProjectProducts")
+}
+
+model Product {
+  id          String          @id @default(cuid())
+  name        String
+  slug        String          @unique
+  description String?         @db.Text
+  features    String?         @db.Text
+  images      ProductImage[]
+  categoryId  String
+  category    ProductCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  isFeatured  Boolean         @default(false)
+  isActive    Boolean         @default(true)
+  sortOrder   Int             @default(0)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([categoryId])
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  url       String
+  alt       String?
+  sortOrder Int     @default(0)
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+}
+
+// ============================================
+// PATTERNS
+// ============================================
+
+model Pattern {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  code        String?
+  description String?  @db.Text
+  image       String?
+  sizes       String[] @default([])
+  materials   String[] @default([])
+  colors      String[] @default([])
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  inspirationProjects InspirationProject[] @relation("ProjectPatterns")
+}
+
+// ============================================
+// INSPIRATION / GALLERY
+// ============================================
+
+model InspirationProject {
+  id           String      @id @default(cuid())
+  title        String
+  slug         String      @unique
+  description  String?     @db.Text
+  location     String?
+  architect    String?
+  architectUrl String?
+  material     String?
+  finish       String?
+  projectType  ProjectType @default(COMMERCIAL)
+  images       ProjectImage[]
+  patterns     Pattern[]          @relation("ProjectPatterns")
+  products     ProductCategory[]  @relation("ProjectProducts")
+  isFeatured   Boolean     @default(false)
+  isActive     Boolean     @default(true)
+  sortOrder    Int         @default(0)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+enum ProjectType {
+  COMMERCIAL
+  HOSPITALITY
+  RESIDENTIAL
+  RETAIL
+  PUBLIC_SPACES
+  HEALTHCARE
+  EDUCATION
+  MIXED_USE
+}
+
+model ProjectImage {
+  id        String             @id @default(cuid())
+  url       String
+  alt       String?
+  sortOrder Int                @default(0)
+  projectId String
+  project   InspirationProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+// ============================================
+// QUOTE REQUESTS
+// ============================================
+
+model QuoteRequest {
+  id             String      @id @default(cuid())
+  firstName      String
+  lastName       String
+  email          String
+  phone          String
+  company        String?
+  projectDetails String      @db.Text
+  needsSamples   Boolean     @default(false)
+  needsCADFiles  Boolean     @default(false)
+  hasBidDeadline Boolean     @default(false)
+  deadlineDate   DateTime?
+  status         QuoteStatus @default(NEW)
+  adminNotes     String?     @db.Text
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+enum QuoteStatus {
+  NEW
+  REVIEWED
+  REPLIED
+  CLOSED
+}
+
+// ============================================
+// CONTACT MESSAGES
+// ============================================
+
+model ContactMessage {
+  id         String        @id @default(cuid())
+  name       String
+  email      String
+  phone      String?
+  subject    String?
+  message    String        @db.Text
+  status     ContactStatus @default(NEW)
+  adminNotes String?       @db.Text
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+}
+
+enum ContactStatus {
+  NEW
+  READ
+  REPLIED
+  CLOSED
+}
+
+// ============================================
+// RESOURCES
+// ============================================
+
+model ResourceCategory {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  slug      String     @unique
+  sortOrder Int        @default(0)
+  resources Resource[]
+}
+
+model Resource {
+  id          String           @id @default(cuid())
+  title       String
+  description String?
+  fileUrl     String
+  fileType    String?
+  fileSize    String?
+  thumbnail   String?
+  categoryId  String
+  category    ResourceCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  downloads   ResourceDownload[]
+  isActive    Boolean          @default(true)
+  sortOrder   Int              @default(0)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@index([categoryId])
+}
+
+model ResourceDownload {
+  id         String   @id @default(cuid())
+  email      String
+  resourceId String
+  resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+
+  @@index([resourceId])
+  @@index([email])
+}
+
+// ============================================
+// FAQs
+// ============================================
+
+model FAQCategory {
+  id        String @id @default(cuid())
+  name      String @unique
+  slug      String @unique
+  sortOrder Int    @default(0)
+  faqs      FAQ[]
+}
+
+model FAQ {
+  id         String      @id @default(cuid())
+  question   String
+  answer     String      @db.Text
+  categoryId String
+  category   FAQCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  sortOrder  Int         @default(0)
+  isActive   Boolean     @default(true)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  @@index([categoryId])
+}
+
+// ============================================
+// ARTICLES / BLOG
+// ============================================
+
+model ArticleCategory {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  slug      String    @unique
+  sortOrder Int       @default(0)
+  articles  Article[]
+}
+
+model Article {
+  id          String          @id @default(cuid())
+  title       String
+  slug        String          @unique
+  excerpt     String?         @db.Text
+  content     String          @db.Text
+  thumbnail   String?
+  categoryId  String
+  category    ArticleCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  isPublished Boolean         @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([categoryId])
+  @@index([publishedAt])
+}
+
+// ============================================
+// SITE SETTINGS
+// ============================================
+
+model SiteSetting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String @db.Text
+}
