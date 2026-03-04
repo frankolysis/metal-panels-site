@@ -27,7 +27,7 @@ export default function AdminQuotesPage() {
                 <td className="px-4 py-3 text-sm text-gray-500">{q.email}</td>
                 <td className="px-4 py-3"><span className={"text-xs px-2 py-0.5 rounded-full " + (STATUS_COLORS[q.status] || "bg-gray-100 text-gray-600")}>{q.status}</span></td>
                 <td className="px-4 py-3 text-sm text-gray-500">{new Date(q.createdAt).toLocaleDateString()}</td>
-                <td className="px-4 py-3 text-right"><Link href={"/admin/quotes/" + q.id} className="text-sm text-[--color-brand-light] hover:underline">View</Link></td>
+                <td className="px-4 py-3 text-right"><Link href={"/admin/quotes/" + q.id} className="text-sm text-brand-light hover:underline">View</Link></td>
               </tr>
             ))}
             {quotes.length === 0 && <tr><td colSpan={5} className="px-4 py-8 text-center text-gray-500">No quote requests yet.</td></tr>}

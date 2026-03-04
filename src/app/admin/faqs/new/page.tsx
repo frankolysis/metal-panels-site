@@ -194,7 +194,7 @@ export default function NewFAQPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="bg-[--color-brand-accent] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600 disabled:opacity-50"
+            className="bg-brand-accent text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600 disabled:opacity-50"
           >
             {submitting ? "Saving..." : "Save FAQ"}
           </button>

@@ -33,7 +33,7 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-[--color-brand] text-center mb-2">
+        <h1 className="text-2xl font-bold text-brand text-center mb-2">
           Admin Login
         </h1>
         <p className="text-sm text-gray-500 text-center mb-6">
@@ -56,7 +56,7 @@ export default function AdminLoginPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[--color-brand-light] focus:outline-none focus:ring-1 focus:ring-[--color-brand-light]"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-brand-light focus:outline-none focus:ring-1 focus:ring-brand-light"
               placeholder="admin@metalcraftpanels.com"
             />
           </div>
@@ -69,14 +69,14 @@ export default function AdminLoginPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-[--color-brand-light] focus:outline-none focus:ring-1 focus:ring-[--color-brand-light]"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-brand-light focus:outline-none focus:ring-1 focus:ring-brand-light"
               placeholder="Enter your password"
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[--color-brand] text-white py-2.5 rounded-md font-medium hover:bg-[--color-brand-dark] transition-colors disabled:opacity-50"
+            className="w-full bg-brand text-white py-2.5 rounded-md font-medium hover:bg-brand-dark transition-colors disabled:opacity-50"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>

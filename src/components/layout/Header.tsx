@@ -33,20 +33,20 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-500 hover:text-[--color-brand]"
+                  className="text-gray-500 hover:text-brand"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
             <div className="flex gap-3">
-              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[--color-brand]">
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand">
                 <Facebook size={16} />
               </a>
-              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[--color-brand]">
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand">
                 <Instagram size={16} />
               </a>
-              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[--color-brand]">
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-brand">
                 <Linkedin size={16} />
               </a>
             </div>
@@ -56,7 +56,7 @@ export default function Header() {
 
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-[--color-brand] font-[family-name:var(--font-heading)]">
+          <Link href="/" className="text-2xl font-bold text-brand font-[family-name:var(--font-heading)]">
             {SITE_NAME}
           </Link>
 
@@ -65,7 +65,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-[--color-brand-accent] transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-brand-accent transition-colors"
               >
                 {link.label}
               </Link>

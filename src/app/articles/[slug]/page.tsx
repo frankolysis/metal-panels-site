@@ -28,14 +28,14 @@ export default async function ArticleDetailPage({ params }: Props) {
     <div className="py-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <nav className="text-sm mb-8">
-          <Link href="/articles" className="text-[--color-brand-light] hover:underline">Articles</Link>
+          <Link href="/articles" className="text-brand-light hover:underline">Articles</Link>
           <span className="mx-2 text-gray-400">/</span>
           <span className="text-gray-600">{article.category}</span>
         </nav>
 
         <article>
-          <span className="text-sm font-medium text-[--color-brand-accent]">{article.category}</span>
-          <h1 className="text-3xl font-bold text-[--color-brand] mt-2 mb-4">{article.title}</h1>
+          <span className="text-sm font-medium text-brand-accent">{article.category}</span>
+          <h1 className="text-3xl font-bold text-brand mt-2 mb-4">{article.title}</h1>
           <p className="text-gray-500 text-sm mb-8">{new Date(article.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
 
           <div className="prose prose-lg max-w-none">
@@ -46,7 +46,7 @@ export default async function ArticleDetailPage({ params }: Props) {
         </article>
 
         <div className="mt-12 pt-8 border-t">
-          <Link href="/articles" className="text-[--color-brand-light] hover:underline">&larr; Back to Articles</Link>
+          <Link href="/articles" className="text-brand-light hover:underline">&larr; Back to Articles</Link>
         </div>
       </div>
     </div>

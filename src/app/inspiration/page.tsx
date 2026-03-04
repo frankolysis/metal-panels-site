@@ -30,7 +30,7 @@ function InspirationContent() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-[--color-brand] mb-4">Inspiration Gallery</h1>
+        <h1 className="text-4xl font-bold text-brand mb-4">Inspiration Gallery</h1>
         <p className="text-gray-600 mb-8 max-w-2xl">
           Explore real-world installations of our decorative metal panels across residential, commercial, and public projects.
         </p>
@@ -50,11 +50,11 @@ function InspirationContent() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((project) => (
             <div key={project.title} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[--color-brand] to-[--color-brand-dark] flex items-center justify-center">
+              <div className="aspect-[4/3] bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center">
                 <span className="text-white/20 text-6xl font-bold">{project.title.charAt(0)}</span>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-[--color-brand] mb-2">{project.title}</h3>
+                <h3 className="font-semibold text-brand mb-2">{project.title}</h3>
                 <p className="text-sm text-gray-600 mb-3">{project.location}</p>
                 <div className="space-y-1 text-xs text-gray-500">
                   <p><span className="font-medium">Pattern:</span> {project.pattern}</p>

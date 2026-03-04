@@ -42,7 +42,7 @@ export default function AdminLayout({
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      <aside className="w-64 bg-[--color-brand-dark] text-white flex flex-col">
+      <aside className="w-64 bg-brand-dark text-white flex flex-col">
         <div className="p-4 border-b border-white/10">
           <h1 className="text-lg font-bold">Admin Panel</h1>
           <p className="text-xs text-white/60">MetalCraft Panels</p>

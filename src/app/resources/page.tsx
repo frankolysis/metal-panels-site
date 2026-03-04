@@ -68,7 +68,7 @@ function ResourcesContent() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-[--color-brand] mb-4">Resources</h1>
+        <h1 className="text-4xl font-bold text-brand mb-4">Resources</h1>
         <p className="text-gray-600 mb-8 max-w-2xl">
           Download marketing materials, specifications, CAD libraries, and technical documents.
         </p>
@@ -82,8 +82,8 @@ function ResourcesContent() {
                 onClick={() => toggleCategory(cat)}
                 className={"px-3 py-1.5 rounded-full text-sm border transition-colors " +
                   (selectedCategories.includes(cat)
-                    ? "bg-[--color-brand] text-white border-[--color-brand]"
-                    : "bg-white text-gray-600 border-gray-300 hover:border-[--color-brand]"
+                    ? "bg-brand text-white border-brand"
+                    : "bg-white text-gray-600 border-gray-300 hover:border-brand"
                   )}
               >
                 {cat}
@@ -96,7 +96,7 @@ function ResourcesContent() {
           {filtered.map((resource) => (
             <div key={resource.title} className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
               <div className="flex items-start justify-between mb-2">
-                <span className="text-xs font-medium text-[--color-brand-accent] bg-orange-50 px-2 py-0.5 rounded">
+                <span className="text-xs font-medium text-brand-accent bg-orange-50 px-2 py-0.5 rounded">
                   {resource.category}
                 </span>
                 <span className="text-xs text-gray-400">{resource.fileType}</span>
@@ -105,7 +105,7 @@ function ResourcesContent() {
               <p className="text-xs text-gray-500 mb-3">{resource.fileSize}</p>
               <button
                 onClick={handleDownload}
-                className="flex items-center gap-1 text-sm text-[--color-brand-light] hover:text-[--color-brand] transition-colors"
+                className="flex items-center gap-1 text-sm text-brand-light hover:text-brand transition-colors"
               >
                 <Download size={14} />
                 Download
@@ -133,10 +133,10 @@ function ResourcesContent() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm mb-4 focus:border-[--color-brand-light] focus:outline-none focus:ring-1 focus:ring-[--color-brand-light]"
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm mb-4 focus:border-brand-light focus:outline-none focus:ring-1 focus:ring-brand-light"
                 />
                 <div className="flex gap-2">
-                  <button type="submit" className="flex-1 bg-[--color-brand-accent] text-white py-2 rounded-md text-sm font-medium hover:bg-orange-600">
+                  <button type="submit" className="flex-1 bg-brand-accent text-white py-2 rounded-md text-sm font-medium hover:bg-orange-600">
                     Download
                   </button>
                   <button type="button" onClick={() => setEmailGateOpen(false)} className="flex-1 border border-gray-300 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50">

@@ -17,7 +17,7 @@ export default function ArticlesPage() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-[--color-brand] mb-4">Articles</h1>
+        <h1 className="text-4xl font-bold text-brand mb-4">Articles</h1>
         <p className="text-gray-600 mb-12">News, insights, and updates from our team.</p>
 
         <div className="space-y-8">
@@ -28,12 +28,12 @@ export default function ArticlesPage() {
               className="block group"
             >
               <article className="flex gap-6 items-start bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-                <div className="w-32 h-24 bg-gradient-to-br from-[--color-brand] to-[--color-brand-dark] rounded-md shrink-0 flex items-center justify-center">
+                <div className="w-32 h-24 bg-gradient-to-br from-brand to-brand-dark rounded-md shrink-0 flex items-center justify-center">
                   <span className="text-white/30 text-3xl font-bold">{article.title.charAt(0)}</span>
                 </div>
                 <div>
-                  <span className="text-xs font-medium text-[--color-brand-accent]">{article.category}</span>
-                  <h2 className="text-lg font-semibold text-[--color-brand] group-hover:text-[--color-brand-accent] transition-colors mt-1">
+                  <span className="text-xs font-medium text-brand-accent">{article.category}</span>
+                  <h2 className="text-lg font-semibold text-brand group-hover:text-brand-accent transition-colors mt-1">
                     {article.title}
                   </h2>
                   <p className="text-gray-600 text-sm mt-1">{article.excerpt}</p>

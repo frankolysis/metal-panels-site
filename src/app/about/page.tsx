@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-[--color-brand] mb-8">About {SITE_NAME}</h1>
+        <h1 className="text-4xl font-bold text-brand mb-8">About {SITE_NAME}</h1>
 
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8">
@@ -18,18 +18,18 @@ export default function AboutPage() {
           </p>
 
           <div className="bg-gray-50 rounded-lg p-8 mb-8">
-            <h2 className="text-2xl font-bold text-[--color-brand] mb-4">Product Features</h2>
+            <h2 className="text-2xl font-bold text-brand mb-4">Product Features</h2>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-[--color-brand-accent] rounded-full mt-2 shrink-0" />
+                <span className="w-2 h-2 bg-brand-accent rounded-full mt-2 shrink-0" />
                 <span>Low-maintenance, weather-resistant, durable panels made from steel, corten, or aluminum</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-[--color-brand-accent] rounded-full mt-2 shrink-0" />
+                <span className="w-2 h-2 bg-brand-accent rounded-full mt-2 shrink-0" />
                 <span>Easy installation without costly labor requirements</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-[--color-brand-accent] rounded-full mt-2 shrink-0" />
+                <span className="w-2 h-2 bg-brand-accent rounded-full mt-2 shrink-0" />
                 <span>Recyclable, environmentally-friendly materials</span>
               </li>
             </ul>
@@ -49,7 +49,7 @@ export default function AboutPage() {
           <div className="text-center">
             <Link
               href="/request-quote"
-              className="inline-block bg-[--color-brand-accent] text-white px-8 py-3 rounded-md font-medium hover:bg-orange-600 transition-colors"
+              className="inline-block bg-brand-accent text-white px-8 py-3 rounded-md font-medium hover:bg-orange-600 transition-colors"
             >
               Let&apos;s Work Together
             </Link>

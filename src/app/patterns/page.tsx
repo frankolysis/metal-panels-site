@@ -33,7 +33,7 @@ function PatternsContent() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-[--color-brand] mb-4">Patterns</h1>
+        <h1 className="text-4xl font-bold text-brand mb-4">Patterns</h1>
         <p className="text-gray-600 mb-8 max-w-2xl">
           Browse our library of laser-cut patterns. Patterns are designed in a 10&apos;x10&apos; format
           and may be scaled and modified to achieve any custom size.
@@ -83,10 +83,10 @@ function PatternsContent() {
                   <span className="text-4xl text-gray-300 font-bold">{pattern.charAt(0)}</span>
                 </div>
                 <div className="p-3">
-                  <h3 className="text-sm font-medium text-gray-800 group-hover:text-[--color-brand-accent] transition-colors">
+                  <h3 className="text-sm font-medium text-gray-800 group-hover:text-brand-accent transition-colors">
                     {pattern}
                   </h3>
-                  <p className="text-xs text-[--color-brand-accent] mt-1">View Pattern &rarr;</p>
+                  <p className="text-xs text-brand-accent mt-1">View Pattern &rarr;</p>
                 </div>
               </div>
             </Link>

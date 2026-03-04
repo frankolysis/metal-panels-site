@@ -67,7 +67,7 @@ export default function AdminInspirationPage() {
         </h1>
         <Link
           href="/admin/inspiration/new"
-          className="flex items-center gap-2 bg-[--color-brand-accent] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-orange-600"
+          className="flex items-center gap-2 bg-brand-accent text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-orange-600"
         >
           <Plus size={16} /> Add Project
         </Link>
@@ -158,7 +158,7 @@ export default function AdminInspirationPage() {
                   <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
                     <Link
                       href={"/admin/inspiration/" + project.id + "/edit"}
-                      className="flex items-center gap-1 text-xs text-gray-500 hover:text-[--color-brand] transition-colors"
+                      className="flex items-center gap-1 text-xs text-gray-500 hover:text-brand transition-colors"
                     >
                       <Edit size={14} /> Edit
                     </Link>

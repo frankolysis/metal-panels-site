@@ -44,7 +44,7 @@ export default function ContactDetailPage() {
           <div className="space-y-4">
             <div><label className="block text-sm font-medium text-gray-700 mb-1">Status</label><select value={status} onChange={(e) => setStatus(e.target.value)} className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm"><option value="NEW">New</option><option value="READ">Read</option><option value="REPLIED">Replied</option><option value="CLOSED">Closed</option></select></div>
             <div><label className="block text-sm font-medium text-gray-700 mb-1">Admin Notes</label><textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={6} className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm" placeholder="Add notes..." /></div>
-            <div className="flex gap-2"><button onClick={handleUpdate} className="bg-[--color-brand-accent] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600">Update</button><button onClick={() => router.back()} className="border border-gray-300 px-6 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50">Back</button></div>
+            <div className="flex gap-2"><button onClick={handleUpdate} className="bg-brand-accent text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600">Update</button><button onClick={() => router.back()} className="border border-gray-300 px-6 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50">Back</button></div>
           </div>
         </div>
       </div>

@@ -97,7 +97,7 @@ function FAQsContent() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-[--color-brand] mb-4">Frequently Asked Questions</h1>
+        <h1 className="text-4xl font-bold text-brand mb-4">Frequently Asked Questions</h1>
         <p className="text-gray-600 mb-8">Find answers to common questions about our products and services.</p>
 
         <SearchInput value={search} onChange={setSearch} placeholder="Search FAQs..." className="mb-8" />
@@ -105,7 +105,7 @@ function FAQsContent() {
         <div className="space-y-8">
           {filtered.map((category) => (
             <div key={category.category}>
-              <h2 className="text-xl font-bold text-[--color-brand] mb-4">{category.category}</h2>
+              <h2 className="text-xl font-bold text-brand mb-4">{category.category}</h2>
               <div className="bg-white rounded-lg border border-gray-200 px-6">
                 {category.items.map((item) => (
                   <FAQItem key={item.q} question={item.q} answer={item.a} />

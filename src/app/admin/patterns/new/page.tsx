@@ -21,7 +21,7 @@ export default function NewPatternPage() {
         <div><label className="block text-sm font-medium text-gray-700 mb-1">Code</label><input value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value })} className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm" placeholder="e.g., RP037" /></div>
         <div><label className="block text-sm font-medium text-gray-700 mb-1">Description</label><textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={4} className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm" /></div>
         <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={form.isActive} onChange={(e) => setForm({ ...form, isActive: e.target.checked })} /> Active</label>
-        <div className="flex gap-2"><button type="submit" className="bg-[--color-brand-accent] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600">Save Pattern</button><button type="button" onClick={() => router.back()} className="border border-gray-300 px-6 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50">Cancel</button></div>
+        <div className="flex gap-2"><button type="submit" className="bg-brand-accent text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600">Save Pattern</button><button type="button" onClick={() => router.back()} className="border border-gray-300 px-6 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50">Cancel</button></div>
       </form>
     </div>
   );

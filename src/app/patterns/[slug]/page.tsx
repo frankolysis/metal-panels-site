@@ -27,7 +27,7 @@ export default async function PatternDetailPage({ params }: Props) {
     <div className="py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <nav className="text-sm mb-8">
-          <Link href="/patterns" className="text-[--color-brand-light] hover:underline">Patterns</Link>
+          <Link href="/patterns" className="text-brand-light hover:underline">Patterns</Link>
           <span className="mx-2 text-gray-400">/</span>
           <span className="text-gray-600">{pattern}</span>
         </nav>
@@ -37,7 +37,7 @@ export default async function PatternDetailPage({ params }: Props) {
             <span className="text-9xl text-gray-300 font-bold">{pattern.charAt(0)}</span>
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-[--color-brand] mb-4">{pattern}</h1>
+            <h1 className="text-3xl font-bold text-brand mb-4">{pattern}</h1>
             <p className="text-gray-600 mb-6">
               The {pattern} pattern is a laser-cut design available in multiple sizes and materials.
               Like all our patterns, it can be scaled and modified to suit your specific project needs.
@@ -57,7 +57,7 @@ export default async function PatternDetailPage({ params }: Props) {
               </div>
             </div>
             <div className="flex gap-3">
-              <Link href="/request-quote" className="bg-[--color-brand-accent] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600 transition-colors">
+              <Link href="/request-quote" className="bg-brand-accent text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600 transition-colors">
                 Request a Quote
               </Link>
               <Link href="/inspiration" className="border border-gray-300 text-gray-700 px-6 py-2 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors">

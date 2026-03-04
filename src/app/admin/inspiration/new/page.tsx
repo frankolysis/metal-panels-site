@@ -254,7 +254,7 @@ export default function NewInspirationPage() {
           <button
             type="submit"
             disabled={saving}
-            className="bg-[--color-brand-accent] text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600 disabled:opacity-50"
+            className="bg-brand-accent text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-orange-600 disabled:opacity-50"
           >
             {saving ? "Saving..." : "Save Project"}
           </button>

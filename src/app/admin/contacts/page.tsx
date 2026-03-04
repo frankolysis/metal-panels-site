@@ -28,7 +28,7 @@ export default function AdminContactsPage() {
                 <td className="px-4 py-3 text-sm text-gray-500">{c.subject || "-"}</td>
                 <td className="px-4 py-3"><span className={"text-xs px-2 py-0.5 rounded-full " + (STATUS_COLORS[c.status] || "bg-gray-100 text-gray-600")}>{c.status}</span></td>
                 <td className="px-4 py-3 text-sm text-gray-500">{new Date(c.createdAt).toLocaleDateString()}</td>
-                <td className="px-4 py-3 text-right"><Link href={"/admin/contacts/" + c.id} className="text-sm text-[--color-brand-light] hover:underline">View</Link></td>
+                <td className="px-4 py-3 text-right"><Link href={"/admin/contacts/" + c.id} className="text-sm text-brand-light hover:underline">View</Link></td>
               </tr>
             ))}
             {contacts.length === 0 && <tr><td colSpan={6} className="px-4 py-8 text-center text-gray-500">No contact messages yet.</td></tr>}

@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <div className="py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-[--color-brand] mb-8">Contact Us</h1>
+        <h1 className="text-4xl font-bold text-brand mb-8">Contact Us</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
@@ -35,7 +35,7 @@ export default function ContactPage() {
             <div className="bg-gray-50 rounded-lg p-6">
               <p className="mb-2">
                 <span className="text-gray-500">Email: </span>
-                <a href={"mailto:" + SALES_EMAIL} className="text-[--color-brand-light] hover:underline">
+                <a href={"mailto:" + SALES_EMAIL} className="text-brand-light hover:underline">
                   {SALES_EMAIL}
                 </a>
               </p>
@@ -45,7 +45,7 @@ export default function ContactPage() {
               </p>
               <p className="mb-4">
                 <span className="text-gray-500">General: </span>
-                <a href={"mailto:" + COMPANY_EMAIL} className="text-[--color-brand-light] hover:underline">
+                <a href={"mailto:" + COMPANY_EMAIL} className="text-brand-light hover:underline">
                   {COMPANY_EMAIL}
                 </a>
               </p>

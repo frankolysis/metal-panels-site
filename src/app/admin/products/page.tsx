@@ -29,7 +29,7 @@ export default function AdminProductsPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Products</h1>
-        <Link href="/admin/products/new" className="flex items-center gap-2 bg-[--color-brand-accent] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-orange-600">
+        <Link href="/admin/products/new" className="flex items-center gap-2 bg-brand-accent text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-orange-600">
           <Plus size={16} /> Add Product
         </Link>
       </div>
@@ -52,7 +52,7 @@ export default function AdminProductsPage() {
                 <td className="px-4 py-3"><span className={"text-xs px-2 py-0.5 rounded-full " + (product.isActive ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-600")}>{product.isActive ? "Active" : "Inactive"}</span></td>
                 <td className="px-4 py-3 text-sm">{product.isFeatured ? "Yes" : "-"}</td>
                 <td className="px-4 py-3 text-right">
-                  <Link href={"/admin/products/" + product.id + "/edit"} className="text-gray-400 hover:text-[--color-brand] inline-block mr-2"><Edit size={16} /></Link>
+                  <Link href={"/admin/products/" + product.id + "/edit"} className="text-gray-400 hover:text-brand inline-block mr-2"><Edit size={16} /></Link>
                   <button onClick={() => handleDelete(product.id)} className="text-gray-400 hover:text-red-600"><Trash2 size={16} /></button>
                 </td>
               </tr>

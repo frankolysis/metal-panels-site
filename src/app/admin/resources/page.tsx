@@ -58,7 +58,7 @@ export default function AdminResourcesPage() {
         <h1 className="text-2xl font-bold text-gray-800">Resources</h1>
         <Link
           href="/admin/resources/new"
-          className="flex items-center gap-2 bg-[--color-brand-accent] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-orange-600"
+          className="flex items-center gap-2 bg-brand-accent text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-orange-600"
         >
           <Plus size={16} /> Add Resource
         </Link>
@@ -143,7 +143,7 @@ export default function AdminResourcesPage() {
                   <td className="px-4 py-3 text-right">
                     <Link
                       href={"/admin/resources/" + resource.id + "/edit"}
-                      className="text-gray-400 hover:text-[--color-brand] inline-block mr-2"
+                      className="text-gray-400 hover:text-brand inline-block mr-2"
                     >
                       <Edit size={16} />
                     </Link>
